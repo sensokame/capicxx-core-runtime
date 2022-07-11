@@ -3,15 +3,13 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-cmake_minimum_required (VERSION 2.8.12)
-
-PROJECT(libcommonapi)
-
+cmake_minimum_required (VERSION 3.8.0)
 set(CMAKE_CXX_STANDARD 20)
 SET(CMAKE_SKIP_BUILD_RPATH  FALSE)
 SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 SET(CMAKE_INSTALL_RPATH "$\{ORIGIN\}")
 
+PROJECT(libcommonapi)
 # version of CommonAPI
 SET( LIBCOMMONAPI_MAJOR_VERSION 3 )
 SET( LIBCOMMONAPI_MINOR_VERSION 2 )
