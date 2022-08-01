@@ -54,17 +54,17 @@ namespace CommonAPI {
 
 #ifdef _WIN32
 #define CCALL __cdecl
-#pragma section(".CRT$XCU",read)
+#pragma section(".CRT$XCV",read)
 #define INITIALIZER(f) \
     static void __cdecl f(void); \
-    __declspec(allocate(".CRT$XCU")) void(__cdecl*f##_)(void) = f; \
+    __declspec(allocate(".CRT$XCV")) void(__cdecl*f##_)(void) = f; \
     static void __cdecl f(void)
 #define DEINITIALIZER(f) \
     static void __cdecl f(void); \
     static void _##f##_wrapper(void) { \
         atexit(f); \
     } \
-    __declspec(allocate(".CRT$XCU")) void(__cdecl * f##_)(void) = _##f##_wrapper; \
+    __declspec(allocate(".CRT$XCV")) void(__cdecl * f##_)(void) = _##f##_wrapper; \
     static void __cdecl f(void)
 #else
 #define CCALL
